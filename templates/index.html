@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    <script src="/static/index.js"></script>
+    <link href="/static/index.css" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+<div class="sidebar">
+  <!-- Vertical Navbar -->
+    <div class="logo-details">
+        <div class="logo_name">Patron</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="/index">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Home</span>
+        </a>
+         <span class="tooltip">Home</span>
+      </li>
+    <li>
+      <a href="/about">
+        <i class='bx bx-folder' ></i>
+        <span class="links_name">About us</span>
+      </a>
+      <span class="tooltip">About us</span>
+    </li>
+    <li>
+      <a href="/logout">
+        <i class='bx bx-cog' ></i>
+        <span class="links_name">Log Out</span>
+      </a>
+      <span class="tooltip">Log Out</span>
+    </li>
+    </ul>
+  </div>
+
+  <!-- BODY -->
+  <div class="notnav" style="opacity: 0.9;">
+    <div class="team">
+        <div class="team_member">
+        <form method="get" action="/help">
+            <div class="team_img">
+                <img src="/static/images/handshake.png" alt="Help others">
+            </div>
+            <h3>HELP</h3>
+            <p class="role">a friend in need is a friend indeed</p>
+            <p>Help someone who is going through the same route and take him/her along.</p>
+            <input type="submit" value="HELP" name="help" id="button">
+          </form>
+         </div>
+        <div class="team_member">
+        <form action="/ask" method="get">
+          <div class="team_img">
+            <img src="/static/images/hitchhiking.png" alt="Need help">
+          </div>
+          <h3>REQUEST</h3>
+          <p class="role">Ask help and next time it's on me.</p>
+          <p>Request someone who is going through the same route to take you along.</p>
+          <input type="submit" value="ASK" name="request" id="button">
+        </div>
+          </form>
+    </div>
+</div>
+{% endblock %}

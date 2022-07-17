@@ -1,0 +1,81 @@
+{% extends "layout.html" %} 
+
+{% block title %}
+    <!-- For register (css) -->
+    <link href="/static/register.css" rel="stylesheet">
+
+    <style>
+        .icon {
+            height: 10%;
+            width: 10%;
+        }
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+        }
+            
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+            
+        .closebtn:hover {
+            color: black;
+        }
+    </style>
+{% endblock %}
+
+
+{% block main %} 
+<div class="wrapper">
+    
+
+    <!-- Flash message if the user enters invalid locations -->
+    {% with messages = get_flashed_messages() %} 
+        {% if messages %}
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>INVALID!</strong> ENTER A VALID LOCATION.
+        </div>
+        {% endif %} 
+    {% endwith %} 
+
+
+    <div class="form-container">
+        <div class="slide-controls">
+        <input type="radio" name="slide" id="login" checked>
+            <h1>ENTER YOUR START AND END POINT (HELP OTHERS)</h1>
+        </div>
+        <div class="form-inner">
+        <form action="/help" class="login" method="post">
+            <div class="field">
+                <input type="text" placeholder="ORIGIN" required autofocus autocomplete="off" name="origin">
+            </div>
+            <div class="field">
+                <input type="text" placeholder="DESTINATION" required autofocus autocomplete="off" name="destination">
+            </div>
+            <div class="pass-link">
+                <input type="checkbox" value="T&C" checked onclick="return false" />
+                <label>You agree to our <a href="/about"> terms and condition ></a></label>
+            </div>
+            <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="GO!">
+            </div>
+        </form>
+        </div>
+    </div>
+    <a href="/index"><ion-icon name="play-back-circle-outline" class="icon"></ion-icon></a>
+</div>
+
+<!-- MIT's icons -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+{% endblock %}

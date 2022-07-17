@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    <!-- For register (css) -->
+    <link href="/static/register.css" rel="stylesheet">
+    <style>
+        .icon {
+            height: 10%;
+            width: 10%;
+        }
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
+    </style>
+{% endblock %}
+
+
+{% block main %}
+
+
+<div class="wrapper">
+
+    <!-- Flash message if the user enters invalid locations -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>INVALID!</strong> ENTER A VALID LOCATION.
+        </div>
+        {% endif %}
+    {% endwith %}
+
+    <div class="form-container">
+        <div class="slide-controls">
+        <input type="radio" name="slide" id="login" checked>
+            <h1>CHANGE YOUR PASSWORD HERE</h1>
+        </div>
+        <div class="form-inner">
+        <form action="/changepassword" class="login" method="post">
+            <div class="field">
+                <input type="email" placeholder="Email Address" required autofocus autocomplete="off" name="email">
+            </div>
+            <div class="field">
+                <input type="password" placeholder="New password" required autofocus autocomplete="off" name="newpassword">
+            </div>
+            <div class="field">
+                <input type="password" placeholder="New password (again)" required autofocus autocomplete="off" name="newconfirmation">
+            </div>
+            <br>
+            <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="CHANGE PASSWORD">
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+
+
+{% endblock %}

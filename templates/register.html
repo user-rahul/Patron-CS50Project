@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    <!-- For register (css) -->
+    <link href="/static/register.css" rel="stylesheet">
+    <script src="/static/register.js"></script>
+    <style>
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
+    </style>
+{% endblock %}
+
+
+{% block main %}
+
+<div class="wrapper">
+
+    <div class="title-text">
+        <div class="title login">
+            <a href="/about">PATRON</a>
+        </div>
+    </div>
+    <div class="form-container">
+        <div class="slide-controls">
+        <input type="radio" name="slide" id="login" checked>
+        <input type="radio" name="slide" id="signup">
+        <label for="login" class="slide login">Login</label>
+        <label for="signup" class="slide signup">Signup</label>
+        <div class="slider-tab"></div>
+        </div>
+        <div class="form-inner">
+        <form action="" class="login" method="post">
+            <div class="field">
+                <input type="email" placeholder="Email Address" required autofocus autocomplete="off" name="email">
+            </div>
+            <div class="field">
+                <input type="password" placeholder="Password" required autofocus autocomplete="off" name="password">
+            </div>
+            <div class="pass-link">
+                <a href="/changepassword">Forgot password?</a>
+            </div>
+            <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Login">
+            </div>
+            <div class="signup-link">
+                Not a member? <a href="">Signup now</a>
+            </div>
+        </form>
+        <form action="" class="signup" method="post">
+            <div class="field">
+                <input type="email" placeholder="Email Address" required autocomplete="off" autofocus name="email">
+            </div>
+            <div class="field">
+                <input type="password" placeholder="Password" required autocomplete="off" autofocus name="password">
+            </div>
+            <div class="field">
+                <input type="password" placeholder="Confirm password" required autocomplete="off" autofocus name="confirmation">
+            </div>
+            <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Signup">
+            </div>
+        </form>
+        </div>
+    </div>
+    <br>
+    <!-- Flash message if the user enters invalid email -->
+    {% with message = get_flashed_messages() %}
+        {% if message %}
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>{{ message[0] }}</strong>
+        </div>
+        {% endif %}
+    {% endwith %}
+
+
+</div>
+{% endblock %}

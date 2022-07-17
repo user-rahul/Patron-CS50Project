@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    <!-- For register (css) -->
+    <link href="/static/register.css" rel="stylesheet">
+    <style>
+        .icon {
+            height: 10%;
+            width: 10%;
+        }
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
+
+
+        .box {
+            height: 50%;
+            width: 100%;
+            background-color: #D3D3D3;
+            padding-top: 1em;
+            text-align: center;
+            align-items: center;
+        }
+
+    </style>
+{% endblock %}
+
+
+{% block main %}
+
+
+<div class="wrapper">
+
+    <!-- IF TIME EXCEEDS OF SEARCHING -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>Sorry! We didn't find anyone around you.</strong>Retry after some times:)
+        </div>
+        {% endif %}
+    {% endwith %}
+
+    <div class="form-container">
+        <div class="slide-controls">
+        <input type="radio" name="slide" id="login" checked>
+            <h1>CONGRULATIONS. WE FOUND YOUR MATCH</h1>
+        </div>
+        <div class="form-inner">
+        <form action="/ask" class="login" method="post">
+            <div class="field">
+                <b>HELPER:</b>
+                <input type="text" value="{{ HELP }}" disabled>
+            </div>
+            <div class="field">
+                <b>ASK:</b>
+                <input type="text" value="{{ ASK }}" disabled>
+            </div>
+
+            <br><br>
+            <div class="pass-link">
+                <input type="checkbox" value="T&C" checked onclick="return false" />
+                <a href="https://www.hellotravel.com/stories/10-ways-for-women-to-ensure-safety-when-boarding-cab"> Read this before Travelling ></a>
+            </div>
+        </form>
+    </div>
+</div>
+    <a href="/index"><ion-icon name="play-back-circle-outline" class="icon"></ion-icon></a>
+
+    <div class="box">
+        <h3 style="color:#FFFFFF">What comes next:</h3><br>
+        <b>
+            1. You can now log out of the Patron.<br>
+            2. Mail  your riding partner  to know about their status.<br>
+        </b>
+        </ol>
+    </div>
+</div>
+
+
+
+<!-- MIT's icons -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+<style>
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .page::-webkit-scrollbar {
+        display: none;
+    }
+
+    .page {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+
+        overflow: auto;
+        text-align: center;
+        align-items: center;
+        height: 100%;
+        width: 60%;
+        opacity: 0.9;
+        background: #fff;
+    }
+
+    .heading {
+        text-align: left;
+        align-items: left;
+        padding-top: 2em;
+        padding-bottom: 1em;
+        padding-left: 1em;
+    }
+    .icon {
+        height: 10%;
+        width: 10%;
+    }
+
+    .text {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+
+</style>
+{% endblock %}
+
+{% block main %}
+<div class="page">
+    <a href="/index"><ion-icon name="play-back-circle-outline" class="icon"></ion-icon></a>
+
+    <h1 style="padding-top: 3em;"> About Us </h1>
+    <h5 class="heading"><i>Acknowledgement</i></h5>
+    <i class="text">Before starting writing about my work, I think it is important for me to address about the bunch of people who helped me in this journey. Starting with <a href="https://www.codinglabweb.com/">Coding Web lab : for helping me with the cool looking nav bar</a> , <a href="https://www.codingnepalweb.com/">Coding Nepal Web : for the amazing frontend stuff</a> , <a href="https://www.freepik.com/">freepik : for providing free images</a>,<a href="https://stackoverflow.com/">Community at stackoverflow for answering my dumb questions</a>.and above all my parents who didn't interrupted me while i was working on my project even if that meant  skipping my college exam.
+    </i>
+    <h5 class="heading"><i>Our Mission</i></h5>
+    <i class="text">Patron is all about connecting a person who needs help to a person who is ready to help. Consider the situation<br>
+        <img src="/static/images/about.png" alt="about" style="height: 30%; width: 50%;"><br>
+        A person (say X) who is going from A to B and is ready to help others. He / She may search into our web app and check if there is someone who wants help and if there is another person (say Y) who needs help and is going from C to D.Then, the role of patron is connect two people, so that they can go together.
+    </i>
+    <h5 class="heading"><i>How we started ?</i></h5>
+    <i>It all started as a person project by a sophomore student. The main agenda is to keep the humanity alive : What we were known for and not what we are known for.</i>
+    <h5 class="heading"><i>Let's Connect</i></h5>
+    <i>You can connect with me on <a href="https://www.linkedin.com/in/rahul-gupta-60744023b/"> linkedin </a> and if I come on any other platform, i will update up here.</i>
+    <h5 class="heading"><i>Terms & condition</i></h5>
+    <i>Our work is to connect people. We are not responsible for any other things.</i>
+</div>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+{% endblock %}
