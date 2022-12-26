@@ -1,5 +1,5 @@
 # **PATRON**
-> Patron is a web application that connect two people together, the one who needs help and the one who is ready to help. The goal is to serve as a platform that makes it easier for  people to  move  across the places without any worry for resources. In layman's term, it is a platform where one can ask for lift.
+> Patron is a web application where one can ask for lift. The goal is to serve as a platform that makes it easier for  people to  move  across the places without any worry for resources. In layman's term, it is a platform where one can ask for lift.
 
 ## **For video demo** [click here](https://www.youtube.com/watch?v=IZOCvviNcQA)
 #
